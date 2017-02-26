@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<xsd:element name="Productos" type="Productos"/>
+
+	<xsd:complexType name="Productos">
+		<xsd:sequence>		
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="Producto" type="Producto"/>			
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="Producto">
+		<xsd:sequence>	
+		
+			<xsd:element name="CanonicValue">
+			  <xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+				  <xsd:maxLength value = "40"/>
+				</xsd:restriction>
+			  </xsd:simpleType>
+			</xsd:element>
+			
+			<xsd:element name="ProductDescription">
+			  <xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+				  <xsd:maxLength value = "254"/>
+				</xsd:restriction>
+			  </xsd:simpleType>
+			</xsd:element>
+			
+             <xsd:element name="SubProductos">
+               <xsd:complexType>			   
+                  <xsd:sequence>
+				  
+                     <xsd:element name="SubProducto" minOccurs="0" maxOccurs="unbounded">
+                        <xsd:complexType>
+							<xsd:sequence>
+							
+									
+									<!-- TODOS (INCLUIDO MUREX Y STAR)-->
+									<xsd:element minOccurs="0" name="SystemName">
+									  <xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+										  <xsd:maxLength value = "40"/>
+										</xsd:restriction>
+									  </xsd:simpleType>
+									</xsd:element> 
+
+									<!-- MUREX -->
+									<xsd:element minOccurs="0" name="FamilyMurex">
+									  <xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+										  <xsd:maxLength value = "40"/>
+										</xsd:restriction>
+									  </xsd:simpleType>
+									</xsd:element>
+									
+									<!-- MUREX -->
+									<xsd:element minOccurs="0" name="GroupMurex">
+									  <xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+										  <xsd:maxLength value = "40"/>
+										</xsd:restriction>
+									  </xsd:simpleType>
+									</xsd:element>
+									
+									<!-- MUREX -->
+									<xsd:element minOccurs="0" name="TypeMurex">
+									  <xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+										  <xsd:maxLength value = "40"/>
+										</xsd:restriction>
+									  </xsd:simpleType>
+									</xsd:element>
+									
+									<!-- MUREX -->
+									<xsd:element minOccurs="0" name="SkeletMurex">
+									  <xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+										  <xsd:maxLength value = "40"/>
+										</xsd:restriction>
+									  </xsd:simpleType>
+									</xsd:element>
+									
+									<!-- TODOS MENOS MUREX Y STAR -->
+									<xsd:element minOccurs="0" name="SystemValue">
+									  <xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+										  <xsd:maxLength value = "40"/>
+										</xsd:restriction>
+									  </xsd:simpleType>
+									</xsd:element>
+									
+									<!-- STAR -->
+									<xsd:element minOccurs="0" name="GroupStar">
+									  <xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+										  <xsd:maxLength value = "40"/>
+										</xsd:restriction>
+									  </xsd:simpleType>
+									</xsd:element>
+									
+									<!-- STAR -->
+									<xsd:element minOccurs="0" name="ProductCodeStar">
+									  <xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+										  <xsd:maxLength value = "40"/>
+										</xsd:restriction>
+									  </xsd:simpleType>
+									</xsd:element>
+									
+									<xsd:element minOccurs="0" name="Description">
+									  <xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+										  <xsd:maxLength value = "254"/>
+										</xsd:restriction>
+									  </xsd:simpleType>
+									</xsd:element>
+									
+									
+                             </xsd:sequence>										   
+                         </xsd:complexType>						 
+                      </xsd:element>
+					  
+                   </xsd:sequence>
+               </xsd:complexType>
+             </xsd:element>
+			 
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>
+
+
